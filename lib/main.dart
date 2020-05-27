@@ -10,12 +10,21 @@ class FlashChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData(
         textTheme: TextTheme(
-          body1: TextStyle(color: Colors.black54),
-        ),
+          bodyText1: TextStyle(
+            color: Colors.white,
+          )
+        )
       ),
-      home: WelcomeScreen(),
+      initialRoute: WelcomeScreen.route,
+      routes: {
+        WelcomeScreen.route: (context) => WelcomeScreen(),
+        LoginScreen.route: (context) => LoginScreen(),
+        RegistrationScreen.route: (context) => RegistrationScreen(),
+        ChatScreen.route: (context) => ChatScreen()
+      },
+
     );
   }
 }
